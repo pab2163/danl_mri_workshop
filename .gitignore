@@ -1,0 +1,4 @@
+*.nii.gz
+*events.tsv
+flanker/derivatives/mriqc/
+*.DS_Store
