@@ -2,3 +2,4 @@
 *events.tsv
 flanker/derivatives/mriqc/
 *.DS_Store
+flanker/derivatives/sub-01.feat/
