@@ -15,7 +15,7 @@ set fmri(level) 1
 # 7 : Full first-level analysis
 # 1 : Pre-processing
 # 2 : Statistics
-set fmri(analysis) 1
+set fmri(analysis) 7
 
 # Use relative filenames
 set fmri(relative_yn) 0
@@ -30,7 +30,7 @@ set fmri(featwatcher_yn) 1
 set fmri(sscleanup_yn) 0
 
 # Output directory
-set fmri(outputdir) "/Users/paul/Desktop/danl_mri_workshop/flanker/derivatives/sub-01"
+set fmri(outputdir) "/Users/paul/Desktop/danl_mri_workshop/flanker/derivatives/sub-22_run-1.feat"
 
 # TR(s)
 set fmri(tr) 2.000000 
@@ -109,7 +109,7 @@ set fmri(st_file) ""
 set fmri(bet_yn) 1
 
 # Spatial smoothing FWHM (mm)
-set fmri(smooth) 0
+set fmri(smooth) 5
 
 # Intensity normalization
 set fmri(norm_yn) 0
@@ -127,7 +127,7 @@ set fmri(templp_yn) 0
 set fmri(melodic_yn) 0
 
 # Carry out main stats?
-set fmri(stats_yn) 0
+set fmri(stats_yn) 1
 
 # Carry out prewhitening?
 set fmri(prewhiten_yn) 1
@@ -135,7 +135,7 @@ set fmri(prewhiten_yn) 1
 # Add motion parameters to model
 # 0 : No
 # 1 : Yes
-set fmri(motionevs) 0
+set fmri(motionevs) 2
 set fmri(motionevsbeta) ""
 set fmri(scriptevsbeta) ""
 
@@ -153,13 +153,13 @@ set fmri(mixed_yn) 2
 set fmri(randomisePermutations) 5000
 
 # Number of EVs
-set fmri(evs_orig) 1
-set fmri(evs_real) 2
+set fmri(evs_orig) 2
+set fmri(evs_real) 4
 set fmri(evs_vox) 0
 
 # Number of contrasts
-set fmri(ncon_orig) 1
-set fmri(ncon_real) 1
+set fmri(ncon_orig) 4
+set fmri(ncon_real) 4
 
 # Number of F-tests
 set fmri(nftests_orig) 0
@@ -169,7 +169,7 @@ set fmri(nftests_real) 0
 set fmri(constcol) 0
 
 # Carry out post-stats steps?
-set fmri(poststats_yn) 0
+set fmri(poststats_yn) 1
 
 # Pre-threshold masking?
 set fmri(threshmask) ""
@@ -273,16 +273,16 @@ set fmri(totalVoxels) 23920640
 set fmri(ncopeinputs) 0
 
 # 4D AVW data or FEAT directory (1)
-set feat_files(1) "/Users/paul/Desktop/danl_mri_workshop/flanker/sub-01/func/sub-01_task-flanker_run-1_bold"
+set feat_files(1) "/Users/paul/Desktop/danl_mri_workshop/flanker/sub-22/func/sub-22_task-flanker_run-1_bold"
 
 # Add confound EVs text file
 set fmri(confoundevs) 0
 
 # Subject's structural image for analysis 1
-set highres_files(1) "/Users/paul/Desktop/danl_mri_workshop/flanker/sub-01/anat/sub-01_T1w_brain"
+set highres_files(1) "/Users/paul/Desktop/danl_mri_workshop/flanker/sub-22/anat/sub-22_T1w_brain"
 
 # EV 1 title
-set fmri(evtitle1) ""
+set fmri(evtitle1) "incongruent"
 
 # Basic waveform shape (EV 1)
 # 0 : Square
@@ -291,7 +291,7 @@ set fmri(evtitle1) ""
 # 3 : Custom (3 column format)
 # 4 : Interaction
 # 10 : Empty (all zeros)
-set fmri(shape1) 0
+set fmri(shape1) 3
 
 # Convolution (EV 1)
 # 0 : None
@@ -302,43 +302,72 @@ set fmri(shape1) 0
 # 5 : Sine basis functions
 # 6 : FIR basis functions
 # 8 : Alternate Double-Gamma
-set fmri(convolve1) 2
+set fmri(convolve1) 3
 
 # Convolve phase (EV 1)
 set fmri(convolve_phase1) 0
 
 # Apply temporal filtering (EV 1)
-set fmri(tempfilt_yn1) 1
+set fmri(tempfilt_yn1) 0
 
 # Add temporal derivative (EV 1)
 set fmri(deriv_yn1) 1
 
-# Skip (EV 1)
-set fmri(skip1) 0
-
-# Off (EV 1)
-set fmri(off1) 30
-
-# On (EV 1)
-set fmri(on1) 30
-
-# Phase (EV 1)
-set fmri(phase1) 0
-
-# Stop (EV 1)
-set fmri(stop1) -1
-
-# Gamma sigma (EV 1)
-set fmri(gammasigma1) 3
-
-# Gamma delay (EV 1)
-set fmri(gammadelay1) 6
+# Custom EV file (EV 1)
+set fmri(custom1) "/Users/paul/Desktop/danl_mri_workshop/flanker/sub-22/func/incongruent_run1.txt"
 
 # Orthogonalise EV 1 wrt EV 0
 set fmri(ortho1.0) 0
 
 # Orthogonalise EV 1 wrt EV 1
 set fmri(ortho1.1) 0
+
+# Orthogonalise EV 1 wrt EV 2
+set fmri(ortho1.2) 0
+
+# EV 2 title
+set fmri(evtitle2) "congruent"
+
+# Basic waveform shape (EV 2)
+# 0 : Square
+# 1 : Sinusoid
+# 2 : Custom (1 entry per volume)
+# 3 : Custom (3 column format)
+# 4 : Interaction
+# 10 : Empty (all zeros)
+set fmri(shape2) 3
+
+# Convolution (EV 2)
+# 0 : None
+# 1 : Gaussian
+# 2 : Gamma
+# 3 : Double-Gamma HRF
+# 4 : Gamma basis functions
+# 5 : Sine basis functions
+# 6 : FIR basis functions
+# 8 : Alternate Double-Gamma
+set fmri(convolve2) 3
+
+# Convolve phase (EV 2)
+set fmri(convolve_phase2) 0
+
+# Apply temporal filtering (EV 2)
+set fmri(tempfilt_yn2) 0
+
+# Add temporal derivative (EV 2)
+set fmri(deriv_yn2) 1
+
+# Custom EV file (EV 2)
+set fmri(custom2) "/Users/paul/Desktop/danl_mri_workshop/flanker/sub-22/func/congruent_run1.txt"
+
+# Orthogonalise EV 2 wrt EV 0
+set fmri(ortho2.0) 0
+
+# Orthogonalise EV 2 wrt EV 1
+set fmri(ortho2.1) 0
+
+# Orthogonalise EV 2 wrt EV 2
+set fmri(ortho2.2) 0
 
 # Contrast & F-tests mode
 # real : control real EVs
@@ -350,7 +379,7 @@ set fmri(con_mode) orig
 set fmri(conpic_real.1) 1
 
 # Title for contrast_real 1
-set fmri(conname_real.1) ""
+set fmri(conname_real.1) "incongruent > congruent"
 
 # Real contrast_real vector 1 element 1
 set fmri(con_real1.1) 1
@@ -358,17 +387,152 @@ set fmri(con_real1.1) 1
 # Real contrast_real vector 1 element 2
 set fmri(con_real1.2) 0
 
+# Real contrast_real vector 1 element 3
+set fmri(con_real1.3) -1
+
+# Real contrast_real vector 1 element 4
+set fmri(con_real1.4) 0
+
+# Display images for contrast_real 2
+set fmri(conpic_real.2) 1
+
+# Title for contrast_real 2
+set fmri(conname_real.2) "congruent > incongruent"
+
+# Real contrast_real vector 2 element 1
+set fmri(con_real2.1) -1
+
+# Real contrast_real vector 2 element 2
+set fmri(con_real2.2) 0
+
+# Real contrast_real vector 2 element 3
+set fmri(con_real2.3) 1
+
+# Real contrast_real vector 2 element 4
+set fmri(con_real2.4) 0
+
+# Display images for contrast_real 3
+set fmri(conpic_real.3) 1
+
+# Title for contrast_real 3
+set fmri(conname_real.3) "congruent > baseline"
+
+# Real contrast_real vector 3 element 1
+set fmri(con_real3.1) 0
+
+# Real contrast_real vector 3 element 2
+set fmri(con_real3.2) 0
+
+# Real contrast_real vector 3 element 3
+set fmri(con_real3.3) 1
+
+# Real contrast_real vector 3 element 4
+set fmri(con_real3.4) 0
+
+# Display images for contrast_real 4
+set fmri(conpic_real.4) 1
+
+# Title for contrast_real 4
+set fmri(conname_real.4) "incongruent > baseline"
+
+# Real contrast_real vector 4 element 1
+set fmri(con_real4.1) 1.0
+
+# Real contrast_real vector 4 element 2
+set fmri(con_real4.2) 0
+
+# Real contrast_real vector 4 element 3
+set fmri(con_real4.3) 0
+
+# Real contrast_real vector 4 element 4
+set fmri(con_real4.4) 0
+
 # Display images for contrast_orig 1
 set fmri(conpic_orig.1) 1
 
 # Title for contrast_orig 1
-set fmri(conname_orig.1) ""
+set fmri(conname_orig.1) "incongruent > congruent"
 
 # Real contrast_orig vector 1 element 1
 set fmri(con_orig1.1) 1
 
+# Real contrast_orig vector 1 element 2
+set fmri(con_orig1.2) -1
+
+# Display images for contrast_orig 2
+set fmri(conpic_orig.2) 1
+
+# Title for contrast_orig 2
+set fmri(conname_orig.2) "congruent > incongruent"
+
+# Real contrast_orig vector 2 element 1
+set fmri(con_orig2.1) -1
+
+# Real contrast_orig vector 2 element 2
+set fmri(con_orig2.2) 1
+
+# Display images for contrast_orig 3
+set fmri(conpic_orig.3) 1
+
+# Title for contrast_orig 3
+set fmri(conname_orig.3) "congruent > baseline"
+
+# Real contrast_orig vector 3 element 1
+set fmri(con_orig3.1) 0
+
+# Real contrast_orig vector 3 element 2
+set fmri(con_orig3.2) 1
+
+# Display images for contrast_orig 4
+set fmri(conpic_orig.4) 1
+
+# Title for contrast_orig 4
+set fmri(conname_orig.4) "incongruent > baseline"
+
+# Real contrast_orig vector 4 element 1
+set fmri(con_orig4.1) 1.0
+
+# Real contrast_orig vector 4 element 2
+set fmri(con_orig4.2) 0
+
 # Contrast masking - use >0 instead of thresholding?
 set fmri(conmask_zerothresh_yn) 0
+
+# Mask real contrast/F-test 1 with real contrast/F-test 2?
+set fmri(conmask1_2) 0
+
+# Mask real contrast/F-test 1 with real contrast/F-test 3?
+set fmri(conmask1_3) 0
+
+# Mask real contrast/F-test 1 with real contrast/F-test 4?
+set fmri(conmask1_4) 0
+
+# Mask real contrast/F-test 2 with real contrast/F-test 1?
+set fmri(conmask2_1) 0
+
+# Mask real contrast/F-test 2 with real contrast/F-test 3?
+set fmri(conmask2_3) 0
+
+# Mask real contrast/F-test 2 with real contrast/F-test 4?
+set fmri(conmask2_4) 0
+
+# Mask real contrast/F-test 3 with real contrast/F-test 1?
+set fmri(conmask3_1) 0
+
+# Mask real contrast/F-test 3 with real contrast/F-test 2?
+set fmri(conmask3_2) 0
+
+# Mask real contrast/F-test 3 with real contrast/F-test 4?
+set fmri(conmask3_4) 0
+
+# Mask real contrast/F-test 4 with real contrast/F-test 1?
+set fmri(conmask4_1) 0
+
+# Mask real contrast/F-test 4 with real contrast/F-test 2?
+set fmri(conmask4_2) 0
+
+# Mask real contrast/F-test 4 with real contrast/F-test 3?
+set fmri(conmask4_3) 0
 
 # Do contrast masking at all?
 set fmri(conmask1_1) 0

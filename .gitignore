@@ -1,5 +1,8 @@
 *.nii.gz
 *events.tsv
 flanker/derivatives/mriqc/
+flanker/derivatives/*.feat/
 *.DS_Store
 flanker/derivatives/sub-01.feat/
+*crswap
+
