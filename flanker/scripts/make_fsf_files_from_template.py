@@ -24,7 +24,8 @@ for participant in participant_list:
 
         # define what to replace in the template
         replacements = {"SUBNUM":participant, 
-                        'RUN_NUM': run}
+                        'RUN_NUM': run,
+                        '/Users/paul/Desktop/': '/home/mjain/'}
         with open(template_fsf) as infile: 
             # outfile = useable fsf file that is being created for every subject and every run 
             with open(participant_run_specific_fsf, 'w') as outfile:
