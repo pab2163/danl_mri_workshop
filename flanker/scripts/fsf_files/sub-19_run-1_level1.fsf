@@ -30,7 +30,7 @@ set fmri(featwatcher_yn) 1
 set fmri(sscleanup_yn) 0
 
 # Output directory
-set fmri(outputdir) "/Users/paul/Desktop/danl_mri_workshop/flanker/derivatives/sub-19_run-1.feat"
+set fmri(outputdir) "../derivatives/sub-19_run-1.feat"
 
 # TR(s)
 set fmri(tr) 2.000000 
@@ -273,13 +273,13 @@ set fmri(totalVoxels) 23920640
 set fmri(ncopeinputs) 0
 
 # 4D AVW data or FEAT directory (1)
-set feat_files(1) "/Users/paul/Desktop/danl_mri_workshop/flanker/sub-19/func/sub-19_task-flanker_run-1_bold"
+set feat_files(1) "../sub-19/func/sub-19_task-flanker_run-1_bold"
 
 # Add confound EVs text file
 set fmri(confoundevs) 0
 
 # Subject's structural image for analysis 1
-set highres_files(1) "/Users/paul/Desktop/danl_mri_workshop/flanker/sub-19/anat/sub-19_T1w_brain"
+set highres_files(1) "../sub-19/anat/sub-19_T1w_brain"
 
 # EV 1 title
 set fmri(evtitle1) "incongruent"
@@ -314,7 +314,7 @@ set fmri(tempfilt_yn1) 0
 set fmri(deriv_yn1) 1
 
 # Custom EV file (EV 1)
-set fmri(custom1) "/Users/paul/Desktop/danl_mri_workshop/flanker/sub-19/func/incongruent_run1.txt"
+set fmri(custom1) "../sub-19/func/incongruent_run1.txt"
 
 # Orthogonalise EV 1 wrt EV 0
 set fmri(ortho1.0) 0
@@ -358,7 +358,7 @@ set fmri(tempfilt_yn2) 0
 set fmri(deriv_yn2) 1
 
 # Custom EV file (EV 2)
-set fmri(custom2) "/Users/paul/Desktop/danl_mri_workshop/flanker/sub-19/func/congruent_run1.txt"
+set fmri(custom2) "../sub-19/func/congruent_run1.txt"
 
 # Orthogonalise EV 2 wrt EV 0
 set fmri(ortho2.0) 0
